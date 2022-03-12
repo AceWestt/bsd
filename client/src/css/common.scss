@@ -1,0 +1,122 @@
+body {
+  @include normalFont;
+}
+
+.App {
+  overflow-x: hidden;
+  > div {
+    width: 100%;
+  }
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.content-container {
+  width: 100%;
+  max-width: $gridWidth;
+  padding: 0 20px;
+}
+
+.content-container-right {
+  width: 100%;
+  max-width: $gridRight;
+  padding-left: 86px;
+}
+
+.section-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.arrow-component {
+  width: auto;
+  img {
+    width: 30px;
+  }
+}
+
+.loader {
+  align-items: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  transition: all 0.5s;
+  background: #fff;
+  &.loading {
+    opacity: 1;
+  }
+}
+
+.onImagesLoaded {
+  width: 100%;
+}
+
+@media screen and (max-width: $gridWidth) {
+  .content-container {
+    padding: 0 1.24vw;
+    max-width: 100%;
+  }
+
+  .content-container-right {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 5.332vw;
+  }
+
+  .arrow-component {
+    width: auto;
+    img {
+      width: 1.86vw;
+    }
+  }
+}
+
+@media screen and (max-width: $tabletBreakPoint) {
+  body {
+    overflow-x: hidden;
+  }
+  .content-container {
+    padding: 0 5.2vw;
+    max-width: 100%;
+  }
+
+  .content-container-right {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 5.2vw;
+  }
+}
+
+@media screen and (max-width: $mobileBreakPoint) {
+  .content-container {
+    padding: 0 5.32vw;
+  }
+
+  .content-container-right {
+    padding-left: 5.32vw;
+  }
+}

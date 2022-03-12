@@ -1,0 +1,464 @@
+.admin-screen {
+  width: 100%;
+  height: 100vh;
+  @include adminBG();
+  display: block;
+  padding: 30px 40px;
+  &__content {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  &__sidebar {
+    max-width: 300px;
+    width: 100%;
+    height: 100%;
+    background: $sidebarbg;
+    display: flex;
+    flex-direction: column;
+    .header {
+      border-right: 1px solid $sidebarHeaderBorder;
+      .logo {
+        cursor: pointer;
+        height: 40px;
+        img {
+          height: 100%;
+        }
+      }
+      span {
+        font-size: 20px;
+        @include mediumFont();
+        margin-left: 30px;
+        cursor: pointer;
+        transition: color 0.2s linear;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+    .menu {
+      border-top: 1px solid $sidebarHeaderBorder;
+      padding: 40px 0 40px 0;
+      .list {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 100px;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        a {
+          cursor: pointer;
+          position: relative;
+          width: 100%;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          color: $headerColor;
+          font-size: 18px;
+          padding: 0 20px;
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 50%;
+            border-bottom: solid 1px $headerColor;
+            margin: 0;
+            z-index: 0;
+            transition: all 0.5s linear;
+          }
+          &:hover::after {
+            width: 100%;
+            left: 0;
+          }
+          &.active {
+            color: #fff;
+            &::after {
+              left: 0;
+              width: 100%;
+              border-bottom: solid 1px #fff;
+            }
+          }
+          label {
+            cursor: pointer;
+          }
+          .icon {
+            font-size: 24px;
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+  &__mainbar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .top {
+      background: $sidebarbg;
+      .header {
+        span {
+          font-size: 16px;
+          margin-left: 0;
+          &.username {
+            margin-right: 10px;
+            margin-left: auto;
+          }
+        }
+        button {
+          width: auto;
+          height: auto;
+          background: transparent;
+          border: transparent;
+          margin-right: 0;
+          margin-left: 0;
+          .icon {
+            cursor: pointer;
+            color: $headerColor;
+            font-size: 25px;
+            transition: color 0.2s linear;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+    .body {
+      background: rgba(255, 255, 255, 0.7);
+      padding-top: 50px;
+      padding-bottom: 20px;
+      .editor {
+        &-screen {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          &.portfolioscreen {
+            .editor-screen__instructions {
+              width: 0;
+            }
+          }
+          &__main {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+          }
+          &__instructions {
+            width: 500px;
+            flex-shrink: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            img {
+              max-height: 100%;
+              max-width: 100%;
+              min-height: 0;
+              object-fit: contain;
+              float: left;
+              border-radius: 10px;
+              box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.15);
+            }
+          }
+          h4.greeting {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            color: $mainscreenTextHeaderColor;
+            @include mediumFont;
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            .lang-switch {
+              margin-left: 10px;
+              color: #fff;
+              span {
+                margin-right: 5px;
+                padding: 3px 10px;
+                background: $mainscreenTextHeaderColor;
+                border-radius: 5px;
+                font-size: 22px;
+                cursor: pointer;
+                &.active {
+                  background: #fff;
+                  color: $mainscreenTextHeaderColor;
+                  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+                }
+              }
+            }
+          }
+          p {
+            color: rgb(83, 83, 83);
+            &.text-danger {
+              color: red;
+              margin-top: 0;
+            }
+          }
+          .form {
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            flex: 1;
+            margin-top: 20px;
+            padding: 40px 20px;
+            background: rgba($color: #fff, $alpha: 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            > div {
+              width: 100%;
+              height: auto;
+              &.fields {
+                min-height: 0;
+                height: 100%;
+                flex: 1;
+                overflow-y: scroll;
+                padding-bottom: 30px;
+                margin-bottom: 50px;
+              }
+            }
+            .form-control {
+              width: 100%;
+              margin-bottom: 20px;
+              display: flex;
+              flex-direction: column;
+              label {
+                font-size: 18px;
+                color: $mainscreenTextDefaultColor;
+                @include mediumFont;
+                margin-bottom: 10px;
+              }
+              input,
+              textarea {
+                width: 100%;
+                padding: 10px 15px;
+                font-size: 18px;
+                border: 1px solid rgb(189, 189, 189);
+                border-radius: 5px;
+                color: $mainscreenTextDefaultColor;
+              }
+              textarea {
+                resize: none;
+                min-height: 200px;
+              }
+              button {
+                font-size: 18px;
+                padding: 10px 0;
+                border: transparent;
+                background: rgb(124, 163, 247);
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.2s linear;
+                &.inactive {
+                  background: $mainscreenTextHeaderColor;
+                }
+              }
+              &.icn-img-changing {
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 15px;
+                border-radius: 5px;
+                background: rgba($color: #000, $alpha: 0.2);
+                .icon {
+                  font-size: 50px;
+                  color: #fff;
+                }
+                &.icn {
+                  img {
+                    width: 50px;
+                    height: 50px;
+                  }
+                }
+                &.img {
+                  img {
+                    height: 80px;
+                    max-width: 200px;
+                    object-fit: cover;
+                    border-radius: 5px;
+                  }
+                }
+              }
+              &.has-error {
+                label {
+                  color: red;
+                }
+              }
+            }
+            &.aboutscreen,
+            &.servicesscreen,
+            &.portfolioscreen {
+              .points {
+                width: 100%;
+                margin-top: 10px;
+                &.works {
+                  display: flex;
+                  .point {
+                    transition: all 0.5s linear;
+                    overflow: hidden;
+                    .control {
+                      width: 100%;
+                      .btn {
+                        background: transparent;
+                        border: transparent;
+                        font-size: 16px;
+                        color: #fff;
+                        @include mediumFont;
+                        padding: 10px 20px;
+                        margin-right: 5px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        &.save {
+                          background: rgb(131, 204, 131);
+                        }
+                        &.clear {
+                          background: rgb(235, 212, 114);
+                        }
+                        &.back {
+                          background: rgb(67, 148, 148);
+                        }
+                      }
+                    }
+                  }
+                }
+                .point {
+                  width: 100%;
+                  h5 {
+                    font-size: 16px;
+                    color: rgb(50, 194, 230);
+                    @include mediumFont;
+                    margin: 0 0 10px 0;
+                  }
+                  &.table {
+                    background: rgba($color: #fff, $alpha: 0.85);
+                    padding: 30px 20px;
+                    box-shadow: 0 0 30px 1px rgba($color: #000, $alpha: 0.1);
+                  }
+                  table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+
+                    thead,
+                    tbody {
+                      width: 100%;
+                      border-collapse: collapse;
+                      float: none;
+                    }
+                    td,
+                    tr,
+                    th {
+                      border: 2px solid rgb(130, 196, 240);
+                      border-collapse: collapse;
+                      float: none;
+                      text-align: center;
+                      button {
+                        float: none;
+                        border: transparent;
+                        background: transparent;
+                        width: auto;
+                        height: auto;
+                        padding: 5px 10px;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        float: none;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        .icon {
+                          font-size: 24px;
+
+                          float: left;
+                        }
+                        &.add {
+                          color: rgb(15, 168, 53);
+                          border: 2px solid rgb(15, 168, 53);
+                        }
+                        &.edit {
+                          color: rgb(235, 192, 100);
+                          border: 2px solid rgb(235, 192, 100);
+                        }
+                        &.delete {
+                          color: rgb(231, 40, 40);
+                          border: 2px solid rgb(231, 40, 40);
+                          margin-left: 10px;
+                        }
+                      }
+                      img {
+                        float: none;
+                        width: 150px;
+                        height: 150px;
+                        object-fit: cover;
+                      }
+                    }
+                    thead {
+                      tr {
+                        border-left: transparent;
+                        border-top: transparent;
+                        border-right: transparent;
+                        th {
+                          border-top: transparent;
+                          color: rgb(26, 24, 24);
+                          padding: 15px 0;
+                          font-size: 18px;
+                          @include mediumFont;
+                          &:first-child {
+                            border-left: transparent;
+                          }
+                          &:last-child {
+                            border-right: transparent;
+                          }
+                        }
+                      }
+                    }
+                    tbody {
+                      tr {
+                        border-left: transparent;
+                        border-right: transparent;
+                        &:last-child {
+                          border-bottom: transparent;
+                          td {
+                            border-bottom: transparent;
+                          }
+                        }
+                        td {
+                          padding: 10px 0;
+                          color: rgb(13, 105, 141);
+                          @include mediumFont;
+                          font-size: 16px;
+                          &:first-child {
+                            border-left: transparent;
+                          }
+                          &:last-child {
+                            border-right: transparent;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

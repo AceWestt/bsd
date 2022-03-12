@@ -1,0 +1,190 @@
+.portfolio {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  background: $white;
+  padding-bottom: 100px;
+  .title-wrp {
+    margin-top: 130px;
+  }
+  h2 {
+    @include mediumFont;
+    font-size: 120px;
+    color: $mainText;
+    margin: 0;
+  }
+  &-wrp {
+    width: 100%;
+    float: left;
+    margin-top: 130px;
+    padding: 0;
+    height: 680px;
+    // overflow: hidden;
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    .content {
+      position: absolute;
+      display: flex;
+      cursor: url("./img/cursor.svg"), auto;
+      user-select: none;
+      top: 100px;
+      left: 0;
+      padding-left: 200px;
+      padding-right: 200px;
+      .item {
+        margin-right: 200px;
+        width: 500px;
+        .img {
+          width: 100%;
+          height: 500px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.5s;
+          }
+        }
+        .title {
+          width: 100%;
+          @include mediumFont;
+          font-size: 26px;
+          color: $mainText;
+          margin-top: 35px;
+        }
+        .year {
+          @include normalFont;
+          color: $highLight;
+          font-size: 150px;
+          position: absolute;
+          top: -86px;
+          right: -154px;
+        }
+        &:hover {
+          .img {
+            img {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $gridWidth) {
+  .portfolio {
+    .title-wrp {
+      margin-top: 8.06vw;
+    }
+    h2 {
+      font-size: 7.44vw;
+    }
+    &-wrp {
+      margin-top: 8.06vw;
+      padding: 0;
+      height: 42.16vw;
+      .content {
+        top: 6.2vw;
+        padding-right: 12.4vw;
+        padding-left: 12.4vw;
+        .item {
+          margin-right: 12.4vw;
+          width: 31vw;
+          .img {
+            height: 31vw;
+          }
+          .title {
+            font-size: 1.426vw;
+            margin-top: 2.17vw;
+          }
+          .year {
+            font-size: 9.3vw;
+            top: -5.332vw;
+            right: -9.548vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletBreakPoint) {
+  .portfolio {
+    .title-wrp {
+      margin-top: 10.04vw;
+      padding-left: 20.8vw;
+    }
+    h2 {
+      font-size: 7.18vw;
+    }
+    &-wrp {
+      margin-top: 10.04vw;
+      padding: 0;
+      height: 52.16vw;
+      overflow-x: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      .content {
+        top: 6.2vw;
+        .item {
+          margin-right: 15.08vw;
+          width: 39vw;
+          .img {
+            height: 39vw;
+          }
+          .title {
+            font-size: 2.86vw;
+            margin-top: 2.34vw;
+          }
+          .year {
+            font-size: 10.04vw;
+            top: -5.332vw;
+            right: -10.548vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobileBreakPoint) {
+  .portfolio {
+    .title-wrp {
+      margin-top: 10.64vw;
+      padding-left: 15.96vw;
+    }
+    h2 {
+      font-size: 7.98vw;
+    }
+    &-wrp {
+      margin-top: 10.64vw;
+      height: 60.16vw;
+      .content {
+        top: 6.2vw;
+        .item {
+          margin-right: 16.492vw;
+          width: 45.22vw;
+          .img {
+            height: 45.22vw;
+          }
+          .title {
+            font-size: 4.256vw;
+            margin-top: 3.192vw;
+          }
+          .year {
+            font-size: 10.64vw;
+            top: -6.332vw;
+            right: -10.548vw;
+          }
+        }
+      }
+    }
+  }
+}

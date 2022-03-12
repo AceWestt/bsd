@@ -1,0 +1,418 @@
+.about {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  > .section-bg {
+    overflow: hidden;
+    img {
+      top: -300px;
+    }
+  }
+  .title-wrp {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 55px 55px 55px 0;
+    h2 {
+      @include mediumFont;
+      color: $mainText;
+      font-size: 120px;
+      margin: 0;
+    }
+    svg {
+      width: 415px;
+      height: 172px;
+    }
+  }
+  .main-wrp {
+    width: 100%;
+    display: flex;
+    margin-bottom: 186px;
+    > div {
+      &.icon {
+        width: 214px;
+        background: $highLight;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s;
+        height: 210px;
+        overflow: hidden;
+        img {
+          width: 90px;
+          height: 90px;
+        }
+      }
+      &.points {
+        width: 100%;
+        background: $white;
+        .point {
+          width: 100%;
+          padding: 30px 160px 30px 60px;
+          background: $white;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: padding 0.2s;
+          &:nth-child(2n + 2) {
+            background: $lihgtGrey;
+          }
+          &.active {
+            padding: 75px 160px 75px 60px;
+          }
+          h5 {
+            @include mediumFont;
+            font-size: 26px;
+            line-height: 26px;
+            width: 370px;
+            color: $mainText;
+            margin: 0;
+          }
+          p {
+            @include normalFont;
+            font-size: 20px;
+            line-height: 20px;
+            width: 100%;
+            max-width: 635px;
+            padding: 0 20px;
+            color: $mainText;
+            margin: 0;
+          }
+          .control {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .footer-wrp {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    // margin-bottom: -80px;
+    .item {
+      width: 100%;
+      &.left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 108px 0;
+        .text-wrp {
+          width: 100%;
+          max-width: 581px;
+          > * {
+            width: 100%;
+          }
+          h5 {
+            @include mediumFont;
+            font-size: 40px;
+            color: $white;
+            margin: 0 0 50px 0;
+          }
+          p {
+            margin: 0;
+            @include normalFont;
+            font-size: 30px;
+            line-height: 30px;
+            color: $white;
+          }
+        }
+      }
+      &.right {
+        img {
+          width: 100%;
+          height: 333px;
+          object-fit: cover;
+        }
+        div {
+          width: 100%;
+          padding: 55px 60px;
+          background: $highLight;
+          display: flex;
+          flex-direction: column;
+          h5 {
+            margin: 0 0 20px 0;
+            @include mediumFont;
+            font-size: 26px;
+            color: $white;
+          }
+          p {
+            @include normalFont;
+            font-size: 20px;
+            color: $white;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $gridWidth) {
+  .about {
+    > .section-bg {
+      img {
+        top: -18.6vw;
+      }
+    }
+    .title-wrp {
+      padding: 3.41vw 3.41vw 3.41vw 0;
+      h2 {
+        font-size: 7.44vw;
+      }
+      svg {
+        width: 25.73vw;
+        height: 10.664vw;
+      }
+    }
+    .main-wrp {
+      margin-bottom: 11.532vw;
+      > div {
+        &.icon {
+          width: 13.268vw;
+          height: 13.02vw;
+          img {
+            width: 5.58vw;
+            height: 5.58vw;
+          }
+        }
+        &.points {
+          .point {
+            padding: 1.86vw 9.92vw 1.86vw 3.72vw;
+            &.active {
+              padding: 4.65vw 9.92vw 4.65vw 3.72vw;
+            }
+            h5 {
+              font-size: 1.612vw;
+              line-height: 1.612vw;
+              width: 22.94vw;
+            }
+            p {
+              font-size: 1.24vw;
+              line-height: 1.24vw;
+              max-width: 39.37vw;
+              padding: 0 1.24vw;
+            }
+            .control {
+              width: 2.48vw;
+              height: 2.48vw;
+            }
+          }
+        }
+      }
+    }
+    .footer-wrp {
+      // margin-bottom: -4.96vw;
+      .item {
+        &.left {
+          padding: 6.696vw 0;
+          .text-wrp {
+            max-width: 36.022vw;
+            h5 {
+              font-size: 2.48vw;
+              margin: 0 0 3.1vw 0;
+            }
+            p {
+              font-size: 1.86vw;
+              line-height: 1.86vw;
+            }
+          }
+        }
+        &.right {
+          img {
+            height: 20.646vw;
+          }
+          div {
+            padding: 3.41vw 3.72vw;
+            h5 {
+              margin: 0 0 1.24vw 0;
+              font-size: 1.612vw;
+            }
+            p {
+              font-size: 1.24vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletBreakPoint) {
+  .about {
+    overflow: hidden;
+    > .section-bg {
+      img {
+        top: 0;
+      }
+    }
+    .title-wrp {
+      padding: 10.4vw 0 7.8vw 20.8vw;
+      h2 {
+        font-size: 7.8vw;
+      }
+      svg {
+        display: none;
+      }
+    }
+    .main-wrp {
+      margin-bottom: 10.4vw;
+      > div {
+        &.icon {
+          display: none;
+        }
+        &.points {
+          margin-left: -5.2vw;
+          width: 105.2vw;
+          .point {
+            padding: 6.5vw 5.2vw;
+            flex-wrap: wrap;
+            align-items: center;
+            &.active {
+              padding: 7.15vw 5.2vw 10.4vw 5.2vw;
+            }
+            h5 {
+              font-size: 3.38vw;
+              line-height: 3.38vw;
+              width: 48.23vw;
+            }
+            p {
+              margin-top: 6.5vw;
+              font-size: 2.6vw;
+              line-height: 2.6vw;
+              max-width: 74.1vw;
+              padding: 0;
+            }
+            .control {
+              width: 5.7vw;
+              height: 5.7vw;
+              padding: 0.5vw;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+    .footer-wrp {
+      margin-bottom: 0;
+      flex-wrap: wrap;
+      .item {
+        &.left {
+          width: 65vw;
+          padding: 5.85vw 5.2vw;
+          .text-wrp {
+            max-width: 100%;
+            h5 {
+              font-size: 3.9vw;
+              margin: 0 0 2.6vw 0;
+            }
+            p {
+              font-size: 2.86vw;
+              line-height: 2.86vw;
+            }
+          }
+        }
+        &.right {
+          width: 79.43vw;
+          margin-right: 0;
+          margin-left: auto;
+          img {
+            height: 27.43vw;
+          }
+          div {
+            padding: 3.51vw 5.2vw;
+            h5 {
+              margin: 0 0 0.91 0;
+              font-size: 3.9vw;
+            }
+            p {
+              font-size: 2.86vw;
+              line-height: 2.86vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobileBreakPoint) {
+  .about {
+    .title-wrp {
+      padding: 10.64vw 0 10.64vw 10.64vw;
+      h2 {
+        font-size: 7.988vw;
+      }
+    }
+    .main-wrp {
+      margin-bottom: 0;
+      > div {
+        &.points {
+          margin-left: -5.32vw;
+          width: 105.32vw;
+          .point {
+            padding: 10.64vw 5.32vw;
+            &.active {
+              padding: 10.64vw 5.32vw;
+            }
+            h5 {
+              font-size: 4.788vw;
+              line-height: 4.788vw;
+              width: 67.564vw;
+            }
+            p {
+              margin-top: 10.64vw;
+              font-size: 4.256vw;
+              line-height: 4.256vw;
+              max-width: 100%;
+            }
+            .control {
+              width: 11.14vw;
+              height: 11.14vw;
+              padding: 0.5;
+            }
+          }
+        }
+      }
+    }
+    .footer-wrp {
+      .item {
+        &.left {
+          width: 100%;
+          padding: 10.64vw 5.32vw;
+          .text-wrp {
+            h5 {
+              font-size: 5.852vw;
+              margin: 0 0 5.32vw 0;
+            }
+            p {
+              font-size: 4.256vw;
+              line-height: 4.256vw;
+            }
+          }
+        }
+        &.right {
+          width: 100%;
+          img {
+            height: 34.58vw;
+          }
+          div {
+            padding: 4.256vw 5.32vw;
+            h5 {
+              margin: 0;
+              font-size: 5.852vw;
+            }
+            p {
+              font-size: 4.256vw;
+              line-height: 4.256vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}

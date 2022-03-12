@@ -1,0 +1,47 @@
+$gridWidth: 1600px;
+$gridRight: 1683px;
+
+$tabletBreakPoint: 1024px;
+$mobileBreakPoint: 768px;
+
+$white: #fff;
+$mainText: #5b5b5b;
+$serviceBg: #ebebeb;
+$lihgtGrey: #f8f8f8;
+$highLight: #e31e24;
+
+@mixin normalFont {
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin normalItalicFont {
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+@mixin mediumFont {
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-weight: 550;
+  font-style: normal;
+}
+
+@mixin boldFont {
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+@mixin boldFontItalic {
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+@mixin superBoldFont {
+  font-family: "HelveticaNeueCyr", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}

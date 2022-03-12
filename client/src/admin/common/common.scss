@@ -1,0 +1,51 @@
+$sidebarbg: #2e2e2e;
+$sidebarHeaderBorder: #3f3f3f;
+$headerColor: rgb(185, 185, 185);
+$mainscreenTextHeaderColor: rgb(104, 104, 104);
+$mainscreenTextDefaultColor: rgb(83, 83, 83);
+
+@mixin adminBG {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+
+.admin-screen {
+  a {
+    color: $headerColor;
+    &:visited,
+    &:active,
+    &:hover {
+      color: $headerColor;
+    }
+  }
+  .top {
+    width: 100%;
+    padding: 10px 0 20px;
+  }
+
+  .header {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    color: $headerColor;
+  }
+
+  .body {
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    flex: 1;
+    min-height: 0;
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+}

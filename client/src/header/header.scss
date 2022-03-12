@@ -1,0 +1,237 @@
+.header {
+  &__content {
+    .title-wrp {
+      margin-top: 234px;
+      @include superBoldFont;
+      display: flex;
+      flex-direction: column;
+      float: left;
+      .headLine {
+        width: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .arrows {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: -40px;
+        display: flex;
+        align-items: center;
+        img {
+          width: 30px;
+        }
+      }
+      span {
+        font-size: 88px;
+        padding: 30px 45px;
+        background: $highLight;
+        color: $white;
+      }
+      h1 {
+        margin: 20px 0 0 0;
+        color: $white;
+        @include mediumFont;
+        font-size: 40px;
+      }
+    }
+    .more-wrp {
+      width: 100%;
+      margin: 90px 0 35px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .bg {
+        img {
+          object-fit: contain;
+        }
+      }
+      .more-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 250px;
+        padding: 12px 0;
+        cursor: pointer;
+        .arrows {
+          margin-left: 10px;
+          margin-bottom: 10px;
+          img {
+            width: 47px;
+          }
+        }
+        p {
+          @include mediumFont;
+          color: $white;
+          font-size: 22px;
+          margin: 0;
+          margin-right: 50px;
+        }
+      }
+      .social {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        p {
+          @include mediumFont;
+          color: $white;
+          font-size: 16px;
+        }
+        .social-links {
+          a {
+            margin-left: 16px;
+            img {
+              width: 30px;
+              height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $gridWidth) {
+  .header {
+    &__content {
+      .title-wrp {
+        margin-top: 14.508vw;
+        .arrows {
+          right: -2.48vw;
+          img {
+            width: 1.86vw;
+          }
+        }
+        span {
+          font-size: 5.456vw;
+          padding: 1.86vw 2.79vw;
+          margin-bottom: -1px;
+        }
+        h1 {
+          margin: 1.24vw 0 0 0;
+          font-size: 2.48vw;
+        }
+      }
+      .more-wrp {
+        margin: 5.58vw 0 2.17vw 0;
+        .more-btn {
+          width: 15.5vw;
+          padding: 0.744vw 0;
+          .arrows {
+            margin-left: 0.62vw;
+            margin-bottom: 0.62vw;
+            img {
+              width: 2.914vw;
+            }
+          }
+          p {
+            font-size: 1.364vw;
+            margin-right: 3.1vw;
+          }
+        }
+        .social {
+          p {
+            font-size: 0.992vw;
+          }
+          .social-links {
+            a {
+              margin-left: 0.992vw;
+              img {
+                width: 1.86vw;
+                height: 1.86vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tabletBreakPoint) {
+  .header {
+    display: block;
+    &__content {
+      .title-wrp {
+        margin-top: 22.75vw;
+        .arrows {
+          display: none;
+        }
+        span {
+          font-size: 6.5vw;
+          padding: 1.95vw 4vw;
+          margin-bottom: -1px;
+        }
+        h1 {
+          margin: 2.6vw 0 0 0;
+          font-size: 3.9vw;
+        }
+      }
+      .more-wrp {
+        margin: 17.81vw 0 40.88vw 0;
+        .more-btn {
+          width: 30.29vw;
+          padding: 3.744vw 0;
+          .arrows {
+            margin-left: 2.6vw;
+            margin-bottom: 1.3vw;
+            img {
+              width: 6.24vw;
+            }
+          }
+          p {
+            font-size: 2.86vw;
+            margin-right: 3.1vw;
+          }
+        }
+        .social {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobileBreakPoint) {
+  .header {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 91vh;
+      .title-wrp {
+        margin-top: auto;
+        margin-bottom: 26.6vw;
+        span {
+          font-size: 6.118vw;
+          padding: 3.192vw 5.65vw;
+        }
+        h1 {
+          font-size: 6.118vw;
+        }
+      }
+      .more-wrp {
+        margin: 0 0 7.98vw 0;
+        .more-btn {
+          width: 30.29vw;
+          padding: 3.744vw 0;
+          .arrows {
+            margin-left: 2.6vw;
+            margin-bottom: 1.3vw;
+            img {
+              width: 6.24vw;
+            }
+          }
+          p {
+            font-size: 2.86vw;
+            margin-right: 3.1vw;
+          }
+        }
+        .social {
+          display: none;
+        }
+      }
+    }
+  }
+}
